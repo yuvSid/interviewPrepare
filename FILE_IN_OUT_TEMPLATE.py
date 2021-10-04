@@ -12,7 +12,7 @@ def funcName() :
 if __name__ == '__main__':
     #fptr = open(os.environ['OUTPUT_PATH'], 'w')
     frptr = open('./OUTPUT/IN', 'r')
-    fptr = open('./OUTPUT/OUT', 'w'))
+    fptr = open('./OUTPUT/OUT', 'w')
     
     lineNums = frptr.readline()
     lineTarget = frptr.readline()
