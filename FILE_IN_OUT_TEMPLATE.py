@@ -1,31 +1,19 @@
+import json
 
 #
 # Template
 
-#INPUT:
-
-def funcName() :
-    pass
-    
+def someFunc():
+    pass    
     
 
-if __name__ == '__main__':
-    #fptr = open(os.environ['OUTPUT_PATH'], 'w')
-    frptr = open('./OUTPUT/IN', 'r')
-    fptr = open('./OUTPUT/OUT', 'w')
-    
-    lineNums = frptr.readline()
-    lineTarget = frptr.readline()
-    while lineNums and lineTarget :
-        nums = list(map(int, lineNums.rstrip()[1 : -1].split(sep = ',')))
-        target = int(lineTarget.rstrip())
+if __name__ == '__main__':    
+    with open('./OUTPUT/IN', 'r') as f_in, open('./OUTPUT/OUT', "w") as f_out :
+        readen_line = f_in.readline().rstrip()
+        while readen_line :
+            lst = json.loads(readen_line)
 
-        result = 0 # TODO add func here
-        fptr.write(str(result) + '\n')
+            res = someFunc(lst) # TODO change on real file name    
 
-        lineNums = frptr.readline()
-        lineTarget = frptr.readline()
-
-    #fptr.write(str(result) + '\n')
-    frptr.close()
-    fptr.close()
+            f_out.write(json.dumps(res) + '\n')
+            readen_line = f_in.readline().rstrip()
