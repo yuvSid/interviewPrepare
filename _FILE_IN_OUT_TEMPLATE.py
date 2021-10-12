@@ -3,8 +3,9 @@ import json
 #
 # Template
 
-def someFunc(line: str)-> str:
-    return line    
+class Solution:
+    def someFunc(line: str)-> str:
+        return line    
     
 
 if __name__ == '__main__':    
@@ -14,6 +15,7 @@ if __name__ == '__main__':
             if not readen_line:
                 break
 
-            res = someFunc(readen_line) # TODO change on real file name    
+            exec = Solution()        
+            res = exec.someFunc(readen_line) # TODO change on real file name    
 
             f_out.write(json.dumps(res) + '\n')
