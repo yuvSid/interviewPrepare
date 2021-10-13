@@ -60,6 +60,24 @@ class Solution:
 
         return tree
 
+# using stack
+class SolutionSecond:
+    def bstFromPreorder(self, preorder: list[int]) -> Optional[TreeNode]:   
+        tree = TreeNode(preorder[0])
+        stack = [tree]
+
+        for each in preorder[1:]:
+            if each < stack[-1].val:
+                stack[-1].left = TreeNode(each)
+                stack.append(stack[-1].left)
+                continue
+            while stack and each >= stack[-1].val:
+                last = stack.pop()
+            last.right = TreeNode(each)
+            stack.append(last.right)
+
+        return tree
+
 if __name__ == '__main__':    
     with open('./OUTPUT/IN', 'r') as f_in, open('./OUTPUT/OUT', "w") as f_out:
         while True:
@@ -68,7 +86,7 @@ if __name__ == '__main__':
                 break
             readen = json.loads(readen_line)
 
-            exec = Solution()
+            exec = SolutionSecond()
             res = exec.bstFromPreorder(readen)    
 
             f_out.write(json.dumps(res.toList()) + '\n')
