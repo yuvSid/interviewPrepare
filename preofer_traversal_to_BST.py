@@ -40,7 +40,7 @@ class TreeNode:
                 break
         return res[:i+1]
         
-
+#using binary search
 class Solution:
     def bstFromPreorder(self, preorder: list[int]) -> Optional[TreeNode]:   
         tree = TreeNode(val = preorder[0])
