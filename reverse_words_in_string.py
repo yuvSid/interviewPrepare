@@ -6,6 +6,10 @@ import json
 
 class Solution:
     def reverseWords(self, s: str) -> str:
+        return ' '.join(word[::-1] for word in s.split(' '))
+
+class Solution2:
+    def reverseWords(self, s: str) -> str:
         res_s = ''
                 
         word_start = 0
