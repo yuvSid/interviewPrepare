@@ -1,5 +1,5 @@
 import json
-
+from itertools import islice
 #
 # Template
 
@@ -11,12 +11,12 @@ class Solution:
 if __name__ == '__main__':    
     with open('./OUTPUT/IN', 'r') as f_in, open('./OUTPUT/OUT', "w") as f_out:
         while True:
-            readen_line = f_in.readline().rstrip()
-            if not (readen_line):
+            n_args = 1
+            args_raw = [x.rstrip() for x in islice(f_in, n_args)]
+            if not args_raw:
                 break
-            readen = json.loads(readen_line)
 
             exec = Solution()
-            res = exec.someFunc(readen)    
+            res = exec.someFunc(json.loads(args_raw[0]))    
 
             f_out.write(json.dumps(res) + '\n')
