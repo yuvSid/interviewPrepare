@@ -11,6 +11,9 @@ class TreeNode:
         self.right = right
 
     def buildFromList(self, raw: list) -> TreeNode:
+        if not raw:
+            return None
+        
         self.val = raw[0]
         next_to_write = deque([self, self])
         for node in raw[1:]:
