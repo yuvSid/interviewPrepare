@@ -14,19 +14,16 @@ class Solution:
         res = set()
         sums = dict()
 
+        nums.sort()
         for i in range(2, len(nums)):   
             for l in range(i-1):
                 if (sum_val := nums[l]+nums[i-1]) not in sums:
                     sums[sum_val] = set()
-                adds = [nums[l], nums[i-1]]
-                adds.sort()
-                sums[sum_val].add((adds[0], adds[1]))
+                sums[sum_val].add((nums[l], nums[i-1]))
 
             if 0-nums[i] in sums:
                 for sets in sums[0-nums[i]]:
-                    adds = [sets[0], sets[1], nums[i]]
-                    adds.sort()
-                    res.add((adds[0], adds[1], adds[2]))
+                    res.add((sets[0], sets[1], nums[i]))
 
         return [sets for sets in res]    
 
