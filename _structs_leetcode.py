@@ -52,6 +52,9 @@ class ListNode:
         self.next = next
 
     def buildFromList(self, raw: list) -> ListNode:
+        if not raw:
+            return None
+        
         self.val = raw[0]
         node = self
         
@@ -61,6 +64,9 @@ class ListNode:
         return self
 
     def toList(self) -> list:
+        if not self:
+            return []
+
         res = [self.val]
         node = self
         while node := node.next:
