@@ -1,3 +1,5 @@
 
 /OUTPUT
 /__pycache__
+*build
+*.vscode
