@@ -31,9 +31,9 @@ def arrayManipulation(n, queries):
     return max_val
 
 if __name__ == '__main__':
-    #fptr = open(os.environ['OUTPUT_PATH'], 'w')
-    frptr = open('./OUTPUT/IN', 'r')
-    fptr = open('./OUTPUT/OUT', 'w')
+    #fptr = open('OUTPUT/OUT', 'w')
+    frptr = open('OUTPUT/IN', 'r')
+    fptr = open('OUTPUT/OUT', 'w')
 
     first_multiple_input = frptr.readline().rstrip().split()
 

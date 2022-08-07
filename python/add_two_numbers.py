@@ -33,7 +33,7 @@ def addTwoNumbers(l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[Li
 
 
 if __name__ == '__main__':    
-    with open('./OUTPUT/IN', 'r') as f_in, open('./OUTPUT/OUT', "w") as f_out :
+    with open('OUTPUT/IN', 'r') as f_in, open('OUTPUT/OUT', "w") as f_out :
         readen_line_1 = f_in.readline().rstrip()
         readen_line_2 = f_in.readline().rstrip()
         while readen_line_1 and readen_line_2 :

@@ -18,7 +18,7 @@ def matchingStrings(strings, queries) -> list[int]:
     return [strings.count(querie) for querie in queries]
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    fptr = open('OUTPUT/OUT', 'w')
 
     strings_count = int(input().strip())
 

@@ -39,7 +39,7 @@ if __name__ == '__main__':
                     correct = check
             return bad
     
-    with open('./OUTPUT/IN', 'r') as f_in, open('./OUTPUT/OUT', "w") as f_out:
+    with open('OUTPUT/IN', 'r') as f_in, open('OUTPUT/OUT', "w") as f_out:
         while True:
             n_readen = f_in.readline().rstrip()
             bad_readen = f_in.readline().rstrip()

@@ -23,7 +23,7 @@ def islandPerimeter(grid: list[list[int]]) -> int:
     return p
 
 if __name__ == '__main__':    
-    with open('./OUTPUT/IN', 'r') as f_in, open('./OUTPUT/OUT', "w") as f_out :
+    with open('OUTPUT/IN', 'r') as f_in, open('OUTPUT/OUT', "w") as f_out :
         readen_line = f_in.readline().rstrip()
         while readen_line :
             lst = json.loads(readen_line)

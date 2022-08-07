@@ -40,7 +40,7 @@ if __name__ == '__main__':
             else:
                 return self.__guessNum(new_border+1, right)
     
-    with open('./OUTPUT/IN', 'r') as f_in, open('./OUTPUT/OUT', "w") as f_out:
+    with open('OUTPUT/IN', 'r') as f_in, open('OUTPUT/OUT', "w") as f_out:
         while True:
             readen_n = f_in.readline().rstrip()
             readen_pick = f_in.readline().rstrip()

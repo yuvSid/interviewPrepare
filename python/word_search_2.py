@@ -59,7 +59,7 @@ class Solution:
 
 
 if __name__ == '__main__':    
-    with open('./OUTPUT/IN', 'r') as f_in, open('./OUTPUT/OUT', "w") as f_out :
+    with open('OUTPUT/IN', 'r') as f_in, open('OUTPUT/OUT', "w") as f_out :
         board_line = f_in.readline().rstrip()
         word_line = f_in.readline().rstrip()
         while board_line and word_line:

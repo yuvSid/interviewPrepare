@@ -33,7 +33,7 @@ def dynamicArray(n, queries) -> list[int]:
     return result
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    fptr = open('OUTPUT/OUT', 'w')
 
     first_multiple_input = input().rstrip().split()
 

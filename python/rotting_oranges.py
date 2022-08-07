@@ -42,7 +42,7 @@ class Solution:
         return mins    
 
 if __name__ == '__main__':    
-    with open('./OUTPUT/IN', 'r') as f_in, open('./OUTPUT/OUT', "w") as f_out:
+    with open('OUTPUT/IN', 'r') as f_in, open('OUTPUT/OUT', "w") as f_out:
         while True:
             n_args = 1
             args_raw = [x.rstrip() for x in islice(f_in, n_args)]

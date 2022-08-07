@@ -39,7 +39,7 @@ class Solution:
 #         return -1 if target not in dict_val else dict_val[target]        
 
 if __name__ == '__main__':    
-    with open('./OUTPUT/IN', 'r') as f_in, open('./OUTPUT/OUT', "w") as f_out:
+    with open('OUTPUT/IN', 'r') as f_in, open('OUTPUT/OUT', "w") as f_out:
         while True:
             array_line = f_in.readline().rstrip()
             target_line =f_in.readline().rstrip()

@@ -23,7 +23,7 @@ class Solution:
     
 
 if __name__ == '__main__':    
-    with open('./OUTPUT/IN', 'r') as f_in, open('./OUTPUT/OUT', "w") as f_out:
+    with open('OUTPUT/IN', 'r') as f_in, open('OUTPUT/OUT', "w") as f_out:
         while True:
             readen_nums = f_in.readline().rstrip()
             readen_target = f_in.readline().rstrip()

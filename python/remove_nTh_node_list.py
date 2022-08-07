@@ -27,7 +27,7 @@ class Solution:
         return head
 
 if __name__ == '__main__':    
-    with open('./OUTPUT/IN', 'r') as f_in, open('./OUTPUT/OUT', "w") as f_out:
+    with open('OUTPUT/IN', 'r') as f_in, open('OUTPUT/OUT', "w") as f_out:
         while True:
             list_line = f_in.readline().rstrip()
             target_line = f_in.readline().rstrip()

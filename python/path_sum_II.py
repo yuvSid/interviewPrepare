@@ -31,7 +31,7 @@ class Solution:
     
 
 if __name__ == '__main__':    
-    with open('./OUTPUT/IN', 'r') as f_in, open('./OUTPUT/OUT', "w") as f_out:
+    with open('OUTPUT/IN', 'r') as f_in, open('OUTPUT/OUT', "w") as f_out:
         while True:
             numbers_line = f_in.readline().rstrip()
             target_line = f_in.readline().rstrip()
