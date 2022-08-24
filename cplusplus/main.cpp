@@ -1,19 +1,28 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
+#include <cassert>
+
+#include <boost/json/src.hpp>
 
 #include "solutions/reverse_string.cpp"
 
 int main()
 {
-    std::vector<std::string> msg {"Hello", "C++", "World", "from", "VS Code", "and the C++ extension!"};
-    std::string result;
+    std::vector<boost::json::value> in;
 
-    for (const std::string& word : msg)
+    std::ifstream f("./../OUTPUT/IN");
+    assert(f.is_open());
+    for (std::string line; std::getline(f, line);)
     {
-        result += word + " ";
+        error_code ec;
+        auto jv = boost::json::parse(line, ec);
+        if( ec )
+            std::cout << "Parsing failed: " << ec.message() << "\n";
+        else
+            in.push_back(jv);
     }
-    std::cout << result << std::endl;
-    reverseStringCustom(result);
-    std::cout << result << std::endl;
+    for (auto& el:in)
+        std::cout << el.as_string() << std::endl;
 }
