@@ -6,7 +6,7 @@
 
 #include <boost/json/src.hpp>
 
-#include "solutions/reverse_string.cpp"
+#include "solutions/water_flow.cpp"
 
 int main()
 {
@@ -14,15 +14,18 @@ int main()
 
     std::ifstream f("./../OUTPUT/IN");
     assert(f.is_open());
-    for (std::string line; std::getline(f, line);)
-    {
-        error_code ec;
+    for (std::string line; std::getline(f, line);) {
+        std::error_code ec;
         auto jv = boost::json::parse(line, ec);
         if( ec )
             std::cout << "Parsing failed: " << ec.message() << "\n";
         else
             in.push_back(jv);
     }
-    for (auto& el:in)
-        std::cout << el.as_string() << std::endl;
+    for (auto& el:in) {
+        auto input = boost::json::value_to<std::vector<std::vector<int>>>(el);
+        Solution exec;
+        auto res = exec.pacificAtlantic(input);
+        std::cout << boost::json::value_from(res) << std::endl;
+    }
 }
