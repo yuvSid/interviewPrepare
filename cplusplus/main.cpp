@@ -6,7 +6,7 @@
 
 #include <boost/json/src.hpp>
 
-#include "solutions/town_judge.cpp"
+#include "solutions/3_sum_closest.cpp"
 
 int main()
 {
@@ -23,7 +23,6 @@ int main()
             in.push_back(jv);
     }
 
-    // findJudge(int n, std::vector<std::vector<int>>& trust) {
     const int n_args = 2;
     int curr_arg = 0;
     std::vector<boost::json::value> vals(n_args);
@@ -35,9 +34,8 @@ int main()
         
         curr_arg = 0;
         Solution exec;
-        auto val2 = boost::json::value_to<std::vector<std::vector<int>>>(vals[1]);
-        auto res = exec.findJudge(boost::json::value_to<int>(vals[0]), 
-                                  val2);
+        auto val1 = boost::json::value_to<std::vector<int>>(vals[0]);
+        auto res = exec.threeSumClosest(val1, boost::json::value_to<int>(vals[1]));
         std::cout << boost::json::value_from(res) << std::endl;
     }
 }
